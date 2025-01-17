@@ -1,18 +1,21 @@
 package com.wipro.util;
 
-import java.util.Scanner;
-
 public class Addition {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        // Check if two arguments are provided
+        if (args.length < 2) {
+            System.out.println("Please provide two numbers as arguments.");
+            return;
+        }
 
-        System.out.println("Enter the first number: ");
-        int num1 = scanner.nextInt();
-
-        System.out.println("Enter the second number: ");
-        int num2 = scanner.nextInt();
-
-        int sum = num1 + num2;
-        System.out.println("The sum of " + num1 + " and " + num2 + " is: " + sum);
-    }
+        try {
+            // Parse the arguments as integers
+            int num1 = Integer.parseInt(args[0]);
+            int num2 = Integer.parseInt(args[1]);
+            int sum = num1 + num2;
+            System.out.println("The sum is: " + sum);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please provide valid integers.");
+        }
+    }
 }
