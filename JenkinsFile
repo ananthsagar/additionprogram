@@ -20,7 +20,7 @@ pipeline {
                     def num1 = input message: 'Enter the first number:', parameters: [string(name: 'NUM1')]
                     def num2 = input message: 'Enter the second number:', parameters: [string(name: 'NUM2')]
 
-                    sh "echo ${num1} ${num2} | java -cp src com.wipro.util.Addition"
+                    bat' java -cp src com.wipro.util.Addition'
                 }
             }
         }
