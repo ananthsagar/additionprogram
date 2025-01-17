@@ -10,7 +10,7 @@ pipeline {
         stage('Compile') {
             steps {
                 // Compile the Java program
-                bat 'javac src\\com\\wipro\\util\\Addition.java 5 10'
+                bat 'javac src\\com\\wipro\\util\\Addition.java'
             }
         }
         stage('Run') {
@@ -20,7 +20,7 @@ pipeline {
                     def num1 = input message: 'Enter the first number:', parameters: [string(name: 'NUM1')]
                     def num2 = input message: 'Enter the second number:', parameters: [string(name: 'NUM2')]
 
-                    bat' java -cp src com.wipro.util.Addition'
+                    bat' java -cp src com.wipro.util.Addition 5 10'
                 }
             }
         }
