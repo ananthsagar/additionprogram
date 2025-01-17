@@ -10,7 +10,7 @@ pipeline {
         stage('Compile') {
             steps {
                 // Compile the Java program
-                sh 'javac src/com/wipro/util/Addition.java'
+                bat 'javac src\\com\\wipro\\util\\Addition.java'
             }
         }
         stage('Run') {
