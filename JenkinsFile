@@ -15,12 +15,13 @@ pipeline {
         }
         stage('Run') {
             steps {
-                // Execute the Java program with inputs
+                // Get inputs dynamically from Jenkins
                 script {
                     def num1 = input message: 'Enter the first number:', parameters: [string(name: 'NUM1')]
                     def num2 = input message: 'Enter the second number:', parameters: [string(name: 'NUM2')]
 
-                    bat' java -cp src com.wipro.util.Addition 5 10'
+                    // Pass inputs to the Java program
+                    bat "java -cp src com.wipro.util.Addition ${num1} ${num2}"
                 }
             }
         }
